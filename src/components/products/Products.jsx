@@ -1,30 +1,40 @@
 import React from 'react'
-import Grid from '@material-ui/core'
+import { Grid } from '@material-ui/core'
+import Product from './Product/Product'
+
+import useStyles from './styles'
 
 const products = [
     {
         id: 1,
         name: 'Shoes',
         description: 'Running shoes',
-        price: '₹560'
+        price: '₹560',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpEL3UnMgOPyb-rovVAaCR3bMdP5-ber7zhQ&usqp=CAU'
     },
     {
         id: 2,
         name: 'Macbook',
         description: 'Apple Macbook',
-        price: '₹83000'
+        price: '₹83000',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpEL3UnMgOPyb-rovVAaCR3bMdP5-ber7zhQ&usqp=CAU'
     }
 ]
 const Products = ( ) => {
-    <main>
+    const classes = useStyles()
+
+    return(
+        <main className={classes.content}>
+        <div className={classes.toolbar}/>
         <Grid container justify='center' spacing={4}>
-            {products.map((product)=>{
+            {products.map((product)=>(
                 <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
                     <Product product={product}/>
                 </Grid>
-            })}
+            ))}
         </Grid>
-    </main>
+        </main>
+    )
 }
 
 export default Products;
