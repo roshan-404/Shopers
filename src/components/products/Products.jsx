@@ -4,23 +4,7 @@ import Product from './Product/Product'
 
 import useStyles from './styles'
 
-const products = [
-    {
-        id: 1,
-        name: 'Shoes',
-        description: 'Running shoes',
-        price: '₹560',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpEL3UnMgOPyb-rovVAaCR3bMdP5-ber7zhQ&usqp=CAU'
-    },
-    {
-        id: 2,
-        name: 'Macbook',
-        description: 'Apple Macbook',
-        price: '₹83000',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpEL3UnMgOPyb-rovVAaCR3bMdP5-ber7zhQ&usqp=CAU'
-    }
-]
-const Products = ( ) => {
+const Products = ({ products }) => {
     const classes = useStyles()
 
     return(
